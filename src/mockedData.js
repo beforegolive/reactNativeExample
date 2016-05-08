@@ -1,0 +1,28 @@
+var bookList=[
+  { id:1, title:'深入浅出Node.js', author:'朴灵', publishedDate:'2013-12-1',
+  Amazon:18.99,Douban:39.99, Tuling:39.99, Dangdang:39.99},
+  { id:2, title:'Getting Started with React Native', author:'Ethan Holmes, Tom Bray ', publishedDate:'2014-11-1',
+  Amazon:263.45, Dangdang:113.61},
+  { id:3, title:'代码的未来', author:'松本行弘', publishedDate:'2011-7-1'},
+  { id:4, title:'图解HTTP', author:'上野', publishedDate:'2010-2-1'},
+  { id:5, title:'React 中文版', author:'极客学院', publishedDate:'2015-8-1',
+  Amazon:0.99, Dangdang:0.99, Duokan:0.99},
+  { id:6, title:'React.js Essentials', author:'Arternij Fedosejev', publishedDate:'2015-8-1',
+  Amazon:176.64, Dangdang:118.95},
+  { id:7, title:'Mastering React', author:'Adam Horton', publishedDate:'2016-2',
+  Amazon:266.47, Dangdang:187.88},
+  { id:8, title:'Node(图灵原创 3)', author:'郭家宝', publishedDate:'2012-7',
+  Amazon:18, Duokan:20},
+  { id:9, title:'Node.js 官方文档中文版', author:'极客学院', publishedDate:'2012-7',
+  Amazon:4.99, Dangdang:4.99},
+  { id:10, title:'Node与Express开发', author:'吴海星', publishedDate:'2015-1',
+  Amazon:34.99,Douban:34.99, Tuling:34.99},
+  { id:11, title:'Node.js权威指南', author:'陆凌牛', publishedDate:'2014-4',
+  Amazon:25, Douban:25, Duokan:25},
+  { id:12, title:'Deploying Node.js', author:'Sandro Pasquali', publishedDate:'2015-7',
+  Dangdang:170.93},
+  { id:13, title:'Node.js Design Patterns', author:'Mario Casciaro', publishedDate:'2014-12',
+  Dangdang:187.88},
+]
+
+export default bookList

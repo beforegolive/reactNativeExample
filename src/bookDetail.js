@@ -9,7 +9,13 @@ import React,{
 import { connect } from 'react-redux'
 import commonStyles from './styles/commonStyles'
 
-var bookDetail=({detail})=>{
+var bookDetail=({detail, setting, pressToBuy})=>{
+  var {Amazon, Dangdang, Tuling, Douban, Duokan}= detail
+  Amazon=setting.amazon && Amazon
+  Dangdang=setting.dangdang && Dangdang
+  Tuling=setting.tuling && Tuling
+  Douban=setting.douban && Douban
+  Duokan=setting.duokan && Duokan
   return(
     <View style={styles.bookContainer}>
       <View style={[styles.section, styles.rowDirection]}>
@@ -42,33 +48,58 @@ var bookDetail=({detail})=>{
           <Text style={styles.settingHeaderText}>电子版可购买来源：</Text>
         </View>
         <View style={[styles.sourceSectionContainer, {flex:0.8}]}>
-
-          <TouchableHighlight style={styles.sourceSection} onPress={()=>alert(2)}>
+          { Amazon!==undefined && Amazon!== false?
+          <TouchableHighlight style={styles.sourceSection} onPress={()=>pressToBuy()}>
             <View style={[styles.link_Style,styles.bgColor_Amazon]}>
-              <Text style={styles.link_Text}>亚马逊：6元</Text>
+              <Text style={styles.link_Text}>亚马逊：{Amazon}元</Text>
             </View>
-          </TouchableHighlight>
-
+          </TouchableHighlight> :
+          <Text></Text>
+        }
+        { Tuling!==undefined && Tuling!== false?
+          <TouchableHighlight style={styles.sourceSection} onPress={()=>pressToBuy()}>
+            <View style={[styles.link_Style,styles.bgColor_Tuling]}>
+              <Text style={styles.link_Text}>图灵： {Tuling}元</Text>
+            </View>
+          </TouchableHighlight>:
+          <Text></Text>
+        }
+        { Douban!==undefined && Douban!== false?
           <TouchableHighlight style={styles.sourceSection} onPress={()=>alert(2)}>
             <View style={[styles.link_Style,styles.bgColor_Douban]}>
-              <Text style={styles.link_Text}>豆瓣： 13.2元</Text>
+              <Text style={styles.link_Text}>豆瓣： {Douban}元</Text>
             </View>
-          </TouchableHighlight>
+          </TouchableHighlight>:
+          <Text></Text>
+        }
 
+        { Dangdang!==undefined && Dangdang!== false?
           <TouchableHighlight style={styles.sourceSection} onPress={()=>alert(2)}>
             <View style={[styles.link_Style,styles.bgColor_Dangdang]}>
-              <Text style={styles.link_Text}>当当：10元</Text>
+              <Text style={styles.link_Text}>当当：{Dangdang}元</Text>
             </View>
-          </TouchableHighlight>
+          </TouchableHighlight>:
+          <Text></Text>
+        }
 
+        { Duokan!==undefined && Duokan!== false?
           <TouchableHighlight style={styles.sourceSection} onPress={()=>alert(2)}>
-            <View style={[styles.link_Style,styles.bgColor_Tuling]}>
-              <Text style={styles.link_Text}>图灵：22元</Text>
+            <View style={[styles.link_Style,styles.bgColor_Duokan]}>
+              <Text style={styles.link_Text}>多看：{Duokan}元</Text>
             </View>
-          </TouchableHighlight>
-
-
+          </TouchableHighlight>:
+          <Text></Text>
+        }
           </View>
+      </View>
+      <View style={styles.routeFooter}>
+        <View style={styles.routeHeaderSection}>
+          <TouchableHighlight onPress={()=>{
+            backToHome();
+            }}>
+            <Text style={[styles.routeFooterText,styles.redborder]}>回到首页</Text>
+          </TouchableHighlight>
+        </View>
       </View>
     </View>
   )
@@ -142,8 +173,8 @@ var styles= StyleSheet.create({
     },
     sourceSection:{
       width:150,
-      borderColor:'red',
-      borderWidth:1,
+      borderColor:'#ddd',
+      borderWidth:2,
       height:100,
       margin:15,
       borderRadius:2
@@ -170,19 +201,52 @@ var styles= StyleSheet.create({
     bgColor_Tuling:{
       backgroundColor:'blue'
     },
+    bgColor_Duokan:{
+      backgroundColor:'#FA7A20'
+    },
     link_Text:{
       color:'white',
       fontSize: 18
+    },
+    routeFooter:{
+      backgroundColor:'#ccc',
+      borderColor:'#aaa',
+      borderTopWidth:1,
+      borderRadius:1,
+      borderLeftWidth:0,
+      height:40,
+      alignSelf: 'stretch',
+    },
+    routeFooterText:{
+      color:'#ccc',
+      paddingLeft:8,
+      paddingTop:8,
+      fontSize:17,
+    },
+    routeHeaderSection:{
+      alignSelf:'center'
     }
 })
 
 function mapStateToProps(state){
   let { ebookDetail } = state
+  let { setSettings} = state
   return {
-    detail: ebookDetail
+    detail: ebookDetail,
+    setting: setSettings
   }
 }
 
-var Result=connect(mapStateToProps)(bookDetail)
+function mapDispatchToProps(dispatch){
+  return {
+    pressToBuy:()=>{
+      alert('跳转到购买页面或调用对应API进行购买，此处未完成，仅做demo演示。 ^_^')
+    }
+  }
+}
+
+var Result=connect(
+  mapStateToProps,
+  mapDispatchToProps)(bookDetail)
 
 export default Result

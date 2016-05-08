@@ -64,10 +64,6 @@ var Settings=({currentFormIndex, availableSource, setAnimatedForm, setDataSource
           <Text style={styles.lineText}>多看</Text>
           <Switch value={availableSource.duokan} onValueChange={(e)=>setDataSource('duokan',e)} />
         </View>
-        <View style={[styles.rowContainer]}>
-          <Text style={styles.lineText}>淘宝</Text>
-          <Switch value={availableSource.taobao} onValueChange={(e)=>setDataSource('taobao',e)} />
-        </View>
       </View>
     </View>
       <View style={styles.halfContainer}>

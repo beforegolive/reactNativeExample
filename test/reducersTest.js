@@ -1,20 +1,6 @@
 import expect from 'expect'
 import * as Reducers from '../src/reducer.js'
 
-// var Navigator = require('react-native')
-// import React, { Navigator } from 'react-native'
-
-// Navigator.SceneConfigs.PushFromRight (default)
-// Navigator.SceneConfigs.FloatFromRight
-// Navigator.SceneConfigs.FloatFromLeft
-// Navigator.SceneConfigs.FloatFromBottom
-// Navigator.SceneConfigs.FloatFromBottomAndroid
-// Navigator.SceneConfigs.FadeAndroid
-// Navigator.SceneConfigs.HorizontalSwipeJump
-// Navigator.SceneConfigs.HorizontalSwipeJumpFromRight
-// Navigator.SceneConfigs.VerticalUpSwipeJump
-// Navigator.SceneConfigs.VerticalDownSwipeJump
-
 describe('reducers', ()=>{
   it('should return the bookDetail with specific bookId',()=>{
     var mockedAction={
