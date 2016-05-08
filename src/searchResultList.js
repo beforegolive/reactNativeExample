@@ -176,7 +176,7 @@ function mapDispatchToProps(dispatch, ownProps){
   return {
     goToDetail: (bookId)=>{
       boundActionCreators.geteBookDetail(bookId);
-      ownProps.navigator.push({id:3});
+      ownProps.navigator.push({id:3, title:'电子书详情'});
     }
   }
 }

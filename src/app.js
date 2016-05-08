@@ -32,7 +32,7 @@ Navigator.SceneConfigs.VerticalDownSwipeJump]
 
 var App=({renderScene, currentFormIndex})=>{
   return (
-    <Navigator initialRoute={{id:1}}
+    <Navigator initialRoute={{id:1, title:'首页'}}
         configureScene={(route,routeStack) =>{
       return  sceneConfigs[currentFormIndex]
      }}
@@ -48,18 +48,18 @@ var App=({renderScene, currentFormIndex})=>{
                     </TouchableHighlight>
                   </View>
                   <View style={[styles.routeHeaderSection,{flex:1}]}>
-                    <Text style={styles.routeHeaderText}>ebookFinder</Text>
+                    <Text style={styles.routeHeaderText}>{r.title}</Text>
                   </View>
                   <View style={styles.routeHeaderSection}>
                     <TouchableHighlight onPress={()=>{
-                        n.push({id:4});
+                        n.push({id:4,title:'设置'});
                       }}>
                     <Text style={styles.routeHeaderText}>设置</Text>
                     </TouchableHighlight>
                   </View>
                 </View>
                 {renderScene(r,n)}
-                  
+
             </View>
           )
         }} />

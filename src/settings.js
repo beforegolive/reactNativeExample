@@ -176,7 +176,7 @@ function mapDispatchToProps(dispatch, ownProps){
       boundActionCreators.setDataSourceAction(name,value);
     },
     backToHome:()=>{
-      ownProps.navigator.push({id:1})
+      ownProps.navigator.push({id:1,title:'首页'})
     }
   }
 }

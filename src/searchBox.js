@@ -85,7 +85,7 @@ function mapDispatchToProps(dispatch, ownProps){
   return {
     onPress: (value)=>{
       boundActionCreators.searchBookAction(value);
-      ownProps.navigator.push({id:2});
+      ownProps.navigator.push({id:2, title:`关键字:'${value}'`});
     }
   }
 }
