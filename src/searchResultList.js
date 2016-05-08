@@ -3,7 +3,8 @@ import React, {
   Text,
   StyleSheet,
   TouchableHighlight,
-  Image
+  Image,
+  ScrollView,
 } from 'react-native'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -50,6 +51,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    alignSelf: 'stretch',
   },
   button:{
     backgroundColor:'#4285f4',
@@ -63,15 +65,17 @@ const styles = StyleSheet.create({
     color:'white',
   },
   bookContainer:{
-    borderWidth:1,
     flex:1,
-    padding:1,
     alignSelf: 'stretch',
   },
   bookDetail:{
-    borderWidth:1,
-    margin:3,
-    borderColor:'#eee'
+    borderBottomWidth:1,
+    marginLeft:8,
+    marginRight:8,
+    marginBottom:8,
+    padding:2,
+    borderColor:'#eee',
+    alignSelf: 'stretch',
   },
   bookItem:{
     margin:2,

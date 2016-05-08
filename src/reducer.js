@@ -43,7 +43,7 @@ export function ebookDetail(state={ bookDetail:null }, action){
 }
 
 var defaultSetting={
-  form: '',
+  formIndex: 1,
   amazon: true,
   dangdang:true,
   tuling: true,
@@ -55,8 +55,9 @@ export function setSettings(state = defaultSetting, action){
     case 'SETANIMATEDFORM':
      var newState={
        ...state,
-       form: action.form
+       formIndex: action.formIndex
      }
+
     return newState;
       break;
     case 'SETDATASOURCE':
@@ -64,6 +65,8 @@ export function setSettings(state = defaultSetting, action){
       ...state,
       [action.name]: action.value
     }
+    console.log('---------setSettings---------------')
+    console.log(newState)
     return newState;
     default:
       return state;

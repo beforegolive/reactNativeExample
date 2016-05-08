@@ -13,19 +13,34 @@ var bookDetail=({detail})=>{
   return(
     <View style={styles.bookContainer}>
       <View style={[styles.section, styles.rowDirection]}>
-        <View style={[styles.redBorder,{flex:0.4}]}>
+        <View style={[styles.imageContainer]}>
           <Image source={require('./imgs/download.jpeg')}
-           style={{width:160,height:240}}  />
+           style={styles.bookCover}  />
         </View>
-        <View style={[styles.blueBorder,{flex:0.6}]}>
-          <View><Text style={commonStyles.bookTitle}>{detail.title}</Text></View>
-          <View><Text>{detail.author}</Text></View>
-          <View><Text>出版时间：{detail.publishedDate}</Text></View>
+        <View style={[styles.bookDetailContainer]}>
+          <Text style={styles.bookDetailSubTitle}>标题：</Text>
+          <View>
+            <Text style={styles.bookDetailTitle}>{detail.title}</Text>
+          </View>
+          <Text style={styles.bookDetailSubTitle}>作者：</Text>
+          <View>
+            <Text style={styles.bootDetailAuthor}>{detail.author}</Text>
+          </View>
+          <Text style={styles.bookDetailSubTitle}>出版时间：</Text>
+          <View>
+            <Text style={styles.bootDetailAuthor}> {detail.publishedDate}</Text>
+          </View>
+          <Text style={styles.bookDetailSubTitle}>简介：</Text>
+            <View>
+              <Text>本书描述了...</Text>
+            </View>
         </View>
       </View>
 
       <View style={[styles.section, {flex:0.6}]}>
-        <View style={[{flex:0.1},styles.blueBorder]}><Text>购买来源：</Text></View>
+        <View style={[styles.settingHeaderContainer]}>
+          <Text style={styles.settingHeaderText}>电子版可购买来源：</Text>
+        </View>
         <View style={[styles.sourceSectionContainer, {flex:0.8}]}>
 
           <TouchableHighlight style={styles.sourceSection} onPress={()=>alert(2)}>
@@ -60,13 +75,56 @@ var bookDetail=({detail})=>{
 }
 
 var styles= StyleSheet.create({
+    imageContainer:{
+      paddingLeft:10,
+      flex:0.4,
+      alignSelf:'center',
+      justifyContent:'center'
+    },
+    bookCover:{
+      padding:2,
+      margin:2,
+      borderWidth:1,
+      borderColor:'#ccc',
+      width:160,
+      height:210,
+    },
+    bookDetailContainer:{
+      padding:8,
+      flex:0.5
+    },
+    bookDetailSubTitle:{
+      fontStyle: 'italic',
+      marginBottom:6,
+      color:'#999'
+    },
+    bookDetailTitle:{
+      fontSize:17,
+      fontWeight:'bold',
+      marginBottom:8
+    },
+    bootDetailAuthor:{
+      fontWeight:'bold',
+      marginBottom:8,
+      fontSize:14,
+    },
+    settingHeaderContainer:{
+      backgroundColor:'#ddd',
+      alignSelf:'stretch',
+      padding:8,
+      marginTop:4,
+      marginBottom:4,
+    },
+    settingHeaderText:{
+      color:'#333',
+      fontSize:16,
+      fontWeight:'bold',
+    },
     rowDirection:{
       flexDirection:'row',
     },
     section:{
       flex:0.3,
-      borderColor:'red',
-      borderWidth:2,
       alignSelf: 'stretch',
     },
     bookContainer:{

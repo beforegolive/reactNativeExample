@@ -6,8 +6,8 @@ export function geteBookDetail(id){
   return { type:'GETEBOOKDETAIL', id}
 }
 
-export function setAnimatedFormAction(form){
-  return { type: 'SETANIMATEDFORM', form}
+export function setAnimatedFormAction(formIndex){
+  return { type: 'SETANIMATEDFORM', formIndex}
 }
 
 export function setDataSourceAction(name, value){

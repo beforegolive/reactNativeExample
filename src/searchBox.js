@@ -23,7 +23,7 @@ var searchBox=({keyword, onPress})=>{
           onPress(this._localText)
         }
       }>
-          <Text style={styles.buttonText}>Press Me</Text>
+          <Text style={styles.buttonText}>点击搜索</Text>
         </TouchableHighlight>
     </View>
   </View>)
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   },
   textInput:{
     textAlign:'left',
-    height:50,
+    height:45,
     width:200,
     borderColor:'#aaa',
     borderWidth:1,
