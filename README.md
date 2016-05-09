@@ -1,5 +1,5 @@
 # reactNativeExample
-个人技术演示项目，React Native 和Redux框架为主导制作的一个电子书搜索App，测试使用来mocha框架，数据非真实，仅作为技术展示，效果图如下：
+React Native框架和Redux框架为主导的一个电子书搜索App，测试使用来mocha框架，数据非真实，仅作为技术展示，效果图如下：
 
 ![](http://7xtbg7.com2.z0.glb.clouddn.com/record1.gif)
 
